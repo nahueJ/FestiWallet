@@ -1,24 +1,22 @@
 <ion-view view-title="Log In">
   <ion-content class="scroll">
-    <form>
-      <div class="list card">
-        <div class="item item-divider">Nickname</div>
-          <div class="item item-body">
-            <div>
-              <input placeholder="Nickname">
-            </div>
-          </div>
-        </div>
+    <div class="list card">
+      <div class="item item-divider">Nickname</div>
+        <label class="item item-input">
+          <input type="text" placeholder="Nickname">
+        </label>
       </div>
-      <div class="list card">
-        <div class="item item-divider">Password</div>
-          <div class="item item-body">
-            <div>
-              <input placeholder="Password">
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="list card">
+      <div class="item item-divider">Password</div>
+        <label class="item item-input">
+          <input type="password" placeholder="Password">
+        </label>
       </div>
-    </form>
+    </div>
+    <!-- <button class="btn btn-primary btn-lg" ng-click="createTodo()"> -->
+    <button class="button button-block button-assertive">
+      Log In
+    </button>
   </ion-content>
 </ion-view>
