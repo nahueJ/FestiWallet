@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('access.controllers', [])
 
 .controller('SignInCtrl', function($scope, $state) {
   
@@ -9,8 +9,17 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('LogInCtrl', function($scope) {})
+.controller('LogInCtrl', function($scope, $state) {
+  
+  // $scope.logIn = function(user) {
+  $scope.logIn = function() {
+    // console.log('Sign-In', user);
+    $state.go('tabsHome.home');
+  };
+})
 
+.controller('HomeCtrl', function($scope) {})
 
-.controller('SignUpCtrl', function($scope) {});
+.controller('AccountCtrl', function($scope) {})
 
+.controller('SettingsCtrl', function($scope) {})
