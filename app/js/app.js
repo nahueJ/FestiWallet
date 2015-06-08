@@ -58,6 +58,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.forgotpassword', {
+    url: '/forgot-password',
+    views: {
+      'forgot-password': {
+        templateUrl: 'templates/forgot-password.html',
+      }
+    }            
+  })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/logIn');
 });
