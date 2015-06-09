@@ -106,9 +106,9 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services'])
   }) 
 
   .state('tabsHome.buy', {
-    url: '/buy',
+    url: '/account/buy',
     views: {
-      'tab-buy': {
+      'tab-account': {
         templateUrl: 'templates/tab-buy.html',
         controller: 'BuyCtrl'
       }
