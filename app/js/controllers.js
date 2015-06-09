@@ -2,10 +2,10 @@ angular.module('access.controllers', [])
 
 .controller('SignUpCtrl', function($scope, $state) {
   
-  $scope.signIn = function(user) {
-    console.log('Sign-In', user);
-    $state.go('tabs.home');
-  };
+  // $scope.signIn = function(user) {
+  //   console.log('Sign-In', user);
+  //   $state.go('tabs.home');
+  // };
   
 })
 
