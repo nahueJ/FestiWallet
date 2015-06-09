@@ -65,11 +65,12 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services'])
     }
   })
 
-  .state('tab.forgotpassword', {
-    url: '/forgot-password',
+  .state('tab.forgotPassword', {
+    url: '/forgotPassword',
     views: {
-      'forgot-password': {
-        templateUrl: 'templates/forgot-password.html',
+      'tab-forgotPassword': {
+        templateUrl: 'templates/tab-forgotPassword.html',
+        controller: 'ForgotPasswordCtrl'
       }
     }            
   })
@@ -110,6 +111,26 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services'])
       'tab-buy': {
         templateUrl: 'templates/tab-buy.html',
         controller: 'BuyCtrl'
+      }
+    }
+  })  
+
+  .state('tabsHome.historyDetail', {
+    url: '/account/historyDetail',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-historyDetail.html',
+        controller: 'HistoryDetailCtrl'
+      }
+    }
+  })
+
+  .state('tabsHome.eventsDetail', {
+    url: '/home/eventsDetail',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/tab-eventsDetail.html',
+        controller: 'EventsDetailCtrl'
       }
     }
   })  
