@@ -1,6 +1,6 @@
 angular.module('access.controllers', [])
 
-.controller('SignInCtrl', function($scope, $state) {
+.controller('SignUpCtrl', function($scope, $state) {
   
   $scope.signIn = function(user) {
     console.log('Sign-In', user);
