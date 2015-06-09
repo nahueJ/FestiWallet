@@ -1,22 +1,29 @@
 <ion-view view-title="Home">
   <ion-content class="scroll">
 		<ion-list>
-		  <div ng-controller="HomeCtrl">
-	        
-	    <!-- <h2>{{user.userName}}</h2>
-	    <p>{{user.lastText}}</p> -->
-   		<h2>UserName UserSurname</h2>
-   			<p>UserMoney</p>
-	   		<p>Last Update</p>
-	   		<ion-item class="item-icon-right" type="item-text-wrap">
-	   			<h2>Upcoming Events</h2>
-	    		<i class="icon ion-chevron-right icon-accessory"></i>
-	    	</ion-item>
+			<div ng-controller="HomeCtrl">
+				<a class="item item-icon-left" href="#">
+					<i class="ion-person"></i>
+					UserName UserSurname
+				</a>
+				<a class="item item-icon-left" href="#">
+					<i class="ion-cash"></i>
+					UserMoney
+				</a>
+				<a class="item item-icon-left" href="#">
+					<i class="ion-android-refresh"></i>
+					Last Update
+				</a>				
+				<a class="item item-icon-left" href="#">
+					<i class="ion-android-calendar"></i>
+					Upcoming Events
+				</a>	
 			</div>
 		</ion-list>
-    <div class="button-bar">
+    	<div class="button-bar">
 		  <a class="button button-assertive">Charge</a>
 		  <a class="button button-assertive">Log Out</a>
 		</div>
   </ion-content>
 </ion-view>
+
