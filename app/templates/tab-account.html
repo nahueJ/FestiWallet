@@ -1,8 +1,17 @@
 <ion-view view-title="Account">
   <ion-content class="scroll">
-    <!-- <button class="btn btn-primary btn-lg" ng-click="createTodo()"> -->
-    <button class="button button-block button-assertive">
-      Account
-    </button>
+		<ion-list>
+		  <div ng-controller="AccountCtrl">
+	   		<h2>Saldo</h2>
+		    <div class="button-bar">
+				  <a class="button button-assertive">Buy</a>
+				  <a class="button button-assertive">Sell</a>
+				</div>
+	   		<ion-item class="item-icon-right" type="item-text-wrap">
+	   			<h2>History</h2>
+	    		<i class="icon ion-chevron-right icon-accessory"></i>
+    		</ion-item>
+    	</div>
+		</ion-list>
   </ion-content>
 </ion-view>
