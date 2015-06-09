@@ -3,47 +3,47 @@
     <div class="list card">
       <div class="item item-divider">Nickname</div>
         <label class="item item-input">
-          <input type="text" placeholder="Nickname">
+          <input type="text" placeholder="Nickname" ng-model="user.userNickname">
         </label>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider">Name</div>
         <label class="item item-input">
-          <input type="text" placeholder="Name">
+          <input type="text" placeholder="Name" ng-model="user.userName">
         </label>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider">Surname</div>
         <label class="item item-input">
-          <input type="text" placeholder="Surname">
+          <input type="text" placeholder="Surname" ng-model="user.userSurname">
         </label>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider">Email</div>
         <label class="item item-input">
-          <input type="email" placeholder="Email">
+          <input type="email" placeholder="Email" ng-model="user.userEmail">
         </label>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider">Password</div>
         <label class="item item-input">
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Password" ng-model="user.userPassword">
         </label>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider">Confirm Password</div>
         <label class="item item-input">
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Password" ng-model="verification.password">
         </label>
       </div>
     </div>
     <!-- <button class="btn btn-primary btn-lg" ng-click="createTodo()"> -->
-    <button class="button button-block button-assertive">
+    <button class="button button-block button-assertive" ng-click="signUp(user,verification)">
       Sign Up
     </button>
   </ion-content>

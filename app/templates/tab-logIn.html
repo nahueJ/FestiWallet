@@ -3,19 +3,19 @@
     <div class="list card">
       <div class="item item-divider">Nickname</div>
         <label class="item item-input">
-          <input type="text" placeholder="Nickname">
+          <input type="text" placeholder="Nickname" ng-model="user.userNickname">
         </label>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider">Password</div>
         <label class="item item-input">
-          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Password" ng-model="user.userPassword">
         </label>
       </div>
     </div>
     <!-- <button class="btn btn-primary btn-lg" ng-click="createTodo()"> -->
-    <button class="button button-block button-assertive"  ng-click="logIn()">
+    <button class="button button-block button-assertive"  ng-click="logIn(user)">
       Log In
     </button>
   </ion-content>

@@ -1,8 +1,22 @@
 <ion-view view-title="Home">
   <ion-content class="scroll">
-    <!-- <button class="btn btn-primary btn-lg" ng-click="createTodo()"> -->
-    <button class="button button-block button-assertive">
-      Home
-    </button>
+		<ion-list>
+		  <div ng-controller="HomeCtrl">
+	        
+	    <!-- <h2>{{user.userName}}</h2>
+	    <p>{{user.lastText}}</p> -->
+   		<h2>UserName UserSurname</h2>
+   			<p>UserMoney</p>
+	   		<p>Last Update</p>
+	   		<ion-item class="item-icon-right" type="item-text-wrap">
+	   			<h2>Upcoming Events</h2>
+	    		<i class="icon ion-chevron-right icon-accessory"></i>
+	    	</ion-item>
+			</div>
+		</ion-list>
+    <div class="button-bar">
+		  <a class="button button-assertive">Charge</a>
+		  <a class="button button-assertive">Log Out</a>
+		</div>
   </ion-content>
 </ion-view>
