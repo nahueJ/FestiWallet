@@ -33,7 +33,12 @@ angular.module('access.controllers', [])
 
 .controller('ForgotPasswordCtrl', function($scope) {})
 
-.controller('HomeCtrl', function($scope) {})
+.controller('HomeCtrl', function($scope, $state) {
+  
+	$scope.logOut = function() {
+		$state.go('tab.logIn');
+	};
+})
 
 .controller('AccountCtrl', function($scope, $state) {
 
