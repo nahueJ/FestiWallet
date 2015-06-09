@@ -37,3 +37,5 @@ angular.module('access.controllers', [])
 .controller('AccountCtrl', function($scope) {})
 
 .controller('SettingsCtrl', function($scope) {})
+
+.controller('BuyCtrl', function($scope) {})

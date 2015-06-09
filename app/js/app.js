@@ -102,6 +102,16 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services'])
         controller: 'SettingsCtrl'
       }
     }
+  }) 
+
+  .state('tabsHome.buy', {
+    url: '/buy',
+    views: {
+      'tab-buy': {
+        templateUrl: 'templates/tab-buy.html',
+        controller: 'BuyCtrl'
+      }
+    }
   })  
 
   // if none of the above states are matched, use this as the fallback
