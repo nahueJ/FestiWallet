@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'access.services' is found in services.js
 // 'access.controllers' is found in controllers.js
-angular.module('access', ['ionic', 'access.controllers', 'access.services'])
+angular.module('access', ['ionic', 'access.controllers', 'access.services', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -114,6 +114,16 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services'])
       }
     }
   })  
+
+  .state('tabsHome.gain', {
+    url: '/account/gain',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-gain.html',
+        controller: 'GainCtrl'
+      }
+    }
+  })
 
   .state('tabsHome.historyDetail', {
     url: '/account/historyDetail',

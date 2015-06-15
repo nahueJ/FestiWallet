@@ -1,4 +1,4 @@
-angular.module('access.controllers', [])
+angular.module('access.controllers', ['ionic','ngCordova'])
 
 .controller('LogInCtrl', function($scope, $state) {
   
@@ -52,7 +52,27 @@ angular.module('access.controllers', [])
 
 .controller('BuyCtrl', function($scope) {})
 
+.controller('GainCtrl', function($scope, $cordovaBarcodeScanner, $cordovaSms) {
+	$scope.leerCodigo = function () {
+		$cordovaBarcodeScanner.scan().then (function(imagenEscaneada){
+			alert(imagenEscaneada.text);
+		}, function(error){
+			alert("Ha ocurrido un error: "+error);
+		});
+	}
+
+	$scope.enviarSMS = function(){
+    	$cordovaSms.send('phonenumber', 'SMS content', options).then(function() {
+        	alert(phonenumber);
+      	}, function(error) {
+        	alert(phonenumber);
+      	});
+    }
+})
+
+
 .controller('HistoryDetailCtrl', function($scope) {})
 
 .controller('EventsDetailCtrl', function($scope) {})
 
+.controller('SendCtrl', function($scope) {})
