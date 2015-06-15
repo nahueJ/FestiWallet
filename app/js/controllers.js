@@ -6,14 +6,15 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 
 	$scope.logIn = function(user) {
 	
-		$http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
-			//verification on DB and send to Home page
-			var pass= String(data.userPassword);
-			console.log(data.userPassword);
-      		if (pass==user.userPassword){
-      			$state.go('tabsHome.home');
-      		}
-    	});		
+		// $http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
+		// 	//verification on DB and send to Home page
+		// 	var pass= String(data.userPassword);
+		// 	console.log(data.userPassword);
+  //     		if (pass==user.userPassword){
+  //     			$state.go('tabsHome.home');
+  //     		}
+  //   	});		
+		$state.go('tabsHome.home');
 	};
 })
 
