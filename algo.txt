@@ -1,0 +1,23 @@
+<ion-view view-title="Buy">
+  <ion-content class="scroll">
+
+    <p>
+      Aca tiene q estar el codigo QR
+    </p>
+  <div data-role="content">
+        <form>
+        <textarea name="msg" rows="10" cols="40"></textarea><br> 
+        <input type="button" value="Generar" onclick="update_qrcode()">
+        </form>
+        <div id="qr"></div>
+        </div>
+
+  </ion-content>
+</ion-view>
+
+
+
+
+    <!-- PARA CREAR Y BORRAR CODIGO QR -->
+    <script src="js/qrcode.js"></script>
+    <!-- PARA CREAR Y BORRAR CODIGO QR -->
