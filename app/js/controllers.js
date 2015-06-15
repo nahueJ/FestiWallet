@@ -131,3 +131,11 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 .controller('EventsDetailCtrl', function($scope) {})
 
 .controller('SendCtrl', function($scope) {})
+
+.controller('ChargeCtrl', function($scope, $state) {
+	$scope.goHome = function() {
+		alert("succesfully paid");
+		$state.go('tabsHome.home');
+	};
+
+})

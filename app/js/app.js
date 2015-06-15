@@ -125,6 +125,16 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services', 'ngC
     }
   })
 
+  .state('tabsHome.charge', {
+    url: '/home/charge',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-charge.html',
+        controller: 'ChargeCtrl'
+      }
+    }
+  }) 
+
   .state('tabsHome.historyDetail', {
     url: '/account/historyDetail',
     views: {
