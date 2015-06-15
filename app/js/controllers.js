@@ -1,32 +1,44 @@
 angular.module('access.controllers', [])
 
-.controller('LogInCtrl', function($scope, $state) {
+.controller('LogInCtrl', function($scope, $state, $http) {
   
 	$scope.user = {};
 
 	$scope.logIn = function(user) {
-
-		console.log(user.userNickname);
-		console.log(user.userPassword);
-		//verification on DB and send to Home page
-		$state.go('tabsHome.home');
+	
+		$http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
+			//verification on DB and send to Home page
+			var pass= String(data.userPassword);
+			console.log(data.userPassword);
+      		if (pass==user.userPassword){
+      			$state.go('tabsHome.home');
+      		}
+    	});		
 	};
 })
 
-.controller('SignUpCtrl', function($scope, $state) {
+.controller('SignUpCtrl', function($scope, $state, $http) {
   
 	$scope.user = {};
 	$scope.verification = {};
 
 	$scope.signUp = function(user,verification) {
 		if(user.userPassword==verification.password){
-			console.log(user.userNickname);
-			console.log(user.userName);
-			console.log(user.userSurname);
-			console.log(user.userEmail);
-			console.log(user.userPassword);
 			//add to de DB and send to logIn page 
-			$state.go('tab.logIn');
+			$http.post('http://localhost:3000/users',{
+				"userNickname": user.userNickname, 
+				"userName": user.userName,
+				"userSurname": user.userSurname,
+				"userEmail": user.userEmail,
+				"userPassword": user.userPassword,
+				"userCurrency": 0.0
+			}).
+			success(function() {
+			    $state.go('tab.logIn');
+		  	}).
+		  	error(function() {
+			    console.log("usuario existente");
+		  	});
 		}
 	};
 })
