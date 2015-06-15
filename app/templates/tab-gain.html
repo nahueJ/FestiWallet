@@ -1,12 +1,14 @@
 <ion-view view-title="Gain">
   <ion-content class="scroll">
 
-    <div data-role="content" style= "text-align: center" ng-controller="GainCtrl">
-        <img src="img/qr.png">
-        <h2>Lectro QR</h2>
-        <p>Escanea un codigo de barras o un QR</p>
-        <button class="button button-block button-assertive ng-click="leerCodigo" ">Escanear</button>
-    </div>
+	<div style="text-align: center" class="item">
+	  <img src="img/qr.png"><h2>Lector QR</h2>
+	  <p>Escanee el codigo Qr</p>
+	</div>
+	<div class="item">
+	  <button class="button button-block button-positive" ng-click="leerCodigo()" >Escanear</button>
+	  <p>{{imagenEscaneada.text}}</p>
+	</div>
 
   </ion-content>
 </ion-view>
