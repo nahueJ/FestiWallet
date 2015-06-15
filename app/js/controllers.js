@@ -9,9 +9,9 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 		$http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
 			//verification on DB and send to Home page
 			var pass= String(data.userPassword);
-			console.log(data.userPassword);
+			var nick= String(data.userNickname);
       		if (pass==user.userPassword){
-      			$state.go('tabsHome.home');
+      			$state.go('tabsHome.home', { 'userNickname': nick });
       		}
     	});		
 	};
@@ -37,7 +37,7 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 			    $state.go('tab.logIn');
 		  	}).
 		  	error(function() {
-			    console.log("usuario existente");
+			    console.log("Nickname already used");
 		  	});
 		}
 	};
@@ -45,8 +45,13 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 
 .controller('ForgotPasswordCtrl', function($scope) {})
 
-.controller('HomeCtrl', function($scope, $state) {
-  
+.controller('HomeCtrl', function($scope, $state, $stateParams, $http) {
+	$scope.user= {};
+    $http.get('http://localhost:3000/users/'+$stateParams.userNickname).success(function(data) {
+		$scope.user=data;
+		
+	});		
+
 	$scope.logOut = function() {
 		$state.go('tab.logIn');
 	};
