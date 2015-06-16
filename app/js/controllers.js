@@ -14,7 +14,7 @@ angular.module('access.controllers', ['ionic','ngCordova'])
       			$state.go('tabsHome.home', { 'userNickname': nick });
       		}
     	});		
-
+	}
 })
 
 .controller('SignUpCtrl', function($scope, $state, $http) {
@@ -46,11 +46,12 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 
 .controller('ForgotPasswordCtrl', function($scope) {})
 
-.controller('HomeCtrl', function($scope, $state, $stateParams, $http) {
+.controller('HomeCtrl', function($scope, $state, $stateParams, $rootScope, $http) {
 	$scope.user= {};
+	$rootScope.user= {};
     $http.get('http://localhost:3000/users/'+$stateParams.userNickname).success(function(data) {
 		$scope.user=data;
-		
+		$rootScope.user=data;
 	});		
 
 	$scope.logOut = function() {
@@ -58,19 +59,13 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 	};
 })
 
-.controller('AccountCtrl', function($scope, $state) {
+.controller('AccountCtrl', function($scope, $state, $rootScope) {})
 
- //  	$scope.lookForHistory = function() {
- //  		console.log("going");
- //    	$state.go('historyDetail');
-	// };
-})
+.controller('SettingsCtrl', function($scope, $rootScope) {})
 
-.controller('SettingsCtrl', function($scope) {})
+.controller('BuyCtrl', function($scope, $rootScope) {})
 
-.controller('BuyCtrl', function($scope) {})
-
-.controller('GainCtrl', function($scope, $cordovaBarcodeScanner, $cordovaSms) {
+.controller('GainCtrl', function($scope, $cordovaBarcodeScanner, $rootScope) {
 
 	angular.module('lector.controllers',['ionic', 'ngCordova'])
 		$scope.leerCodigo = function(){
