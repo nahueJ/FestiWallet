@@ -6,14 +6,15 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 
 	$scope.logIn = function(user) {
 
-		 $http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
-		 	 //verification on DB and send to Home page
-		 	var pass= String(data.userPassword);
-		 	var nick= String(data.userNickname);
-       		if (pass==user.userPassword){
-       			$state.go('tabsHome.home', { 'userNickname': nick });
-        		}
-     	});	
+		// $http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
+		//  	 //verification on DB and send to Home page
+		//  	var pass= String(data.userPassword);
+		//  	var nick= String(data.userNickname);
+  //      		if (pass==user.userPassword){
+  //      			$state.go('tabsHome.home', { 'userNickname': nick });
+  //       		}
+  //    	});	
+     	$state.go('tabsHome.home');
 	}
 })
 
@@ -63,14 +64,15 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 
 .controller('SettingsCtrl', function($scope, $rootScope) {})
 
-.controller('BuyCtrl', function($scope, $rootScope, $state) {
-	$scope.pin = {};
-	$scope.verifyPin = function(pin) {
-		if($scope.pin == $rootScope.user.userPin){
-			$state.go('tabsHome.getQr');
-		}
-	}	
-})
+ .controller('BuyCtrl', function($scope, $rootScope, $state) {
+ 	$scope.pin = {};
+ 	$scope.verifyPin = function(pin) {
+ 		if($scope.pin == $rootScope.user.userPin){
+ 			update_qrcode();
+ 		}
+ 	}	
+ })
+
 
 .controller('GainCtrl', function($scope, $cordovaBarcodeScanner, $rootScope) {
 

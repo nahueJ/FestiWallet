@@ -1,6 +1,7 @@
 <ion-view view-title="Buy">
   <ion-content class="scroll">
     <div class="list card">
+      
       <div class="item item-divider">Secret PIN</div>
         <label class="item item-input">
           <input type="password" placeholder="pin" placeholder="PIN code">
@@ -9,6 +10,19 @@
           Verify and Pay
         </button>
       </div>
+
+      <div class="item item-divider">Amount to pay</div>
+        <form>
+          <label class="item item-input">
+            <input type="number" name="msg" placeholder="Amount">
+          </label>
+        </form>
+      </div>  
+ 
+      <div data-role="content">
+        <div style="text-align: center" id="qr"></div>
+      </div>
+
     </div>
   </ion-content>
 </ion-view>
