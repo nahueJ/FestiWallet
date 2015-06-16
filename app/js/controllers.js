@@ -6,15 +6,14 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 
 	$scope.logIn = function(user) {
 
-		$http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
-			 //verification on DB and send to Home page
-			var pass= String(data.userPassword);
-			var nick= String(data.userNickname);
-      		if (pass==user.userPassword){
-      			$state.go('tabsHome.home', { 'userNickname': nick });
-       		}
-    	});	
-		$state.go('tabsHome.home');
+		 $http.get('http://localhost:3000/users/'+user.userNickname).success(function(data) {
+		 	 //verification on DB and send to Home page
+		 	var pass= String(data.userPassword);
+		 	var nick= String(data.userNickname);
+       		if (pass==user.userPassword){
+       			$state.go('tabsHome.home', { 'userNickname': nick });
+        		}
+     	});	
 	}
 })
 
@@ -64,11 +63,11 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 
 .controller('SettingsCtrl', function($scope, $rootScope) {})
 
-.controller('BuyCtrl', function($scope, $rootScope) {
+.controller('BuyCtrl', function($scope, $rootScope, $state) {
 	$scope.pin = {};
 	$scope.verifyPin = function(pin) {
 		if($scope.pin == $rootScope.user.userPin){
-			$state.go('tab.logIn');
+			$state.go('tabsHome.getQr');
 		}
 	}	
 })
@@ -141,6 +140,8 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 .controller('EventsDetailCtrl', function($scope) {})
 
 .controller('SendCtrl', function($scope) {})
+
+.controller('GetQrCtrl', function($scope) {})
 
 .controller('ChargeCtrl', function($scope, $state) {
 	$scope.goHome = function() {

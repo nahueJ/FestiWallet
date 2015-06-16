@@ -1,0 +1,22 @@
+<ion-view view-title="Get Qr Code">
+  <ion-content class="scroll">
+
+    <div class="list card">
+      <div class="item item-divider">Amount to pay</div>
+        <form>
+          <label class="item item-input">
+            <input type="number" name="msg" placeholder="Amount">
+          </label>
+        </form>
+      </div>      
+      <button class="button button-block button-assertive"  onclick="update_qrcode()">
+      Buy
+      </button>
+    </div>
+
+    <div data-role="content">
+      <div style="text-align: center" id="qr"></div>
+    </div>
+
+  </ion-content>
+</ion-view>

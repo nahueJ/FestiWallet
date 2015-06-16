@@ -115,6 +115,16 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services', 'ngC
     }
   })  
 
+  .state('tabsHome.getQr', {
+    url: '/account/getQr',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-getQr.html',
+        controller: 'GetQrCtrl'
+      }
+    }
+  }) 
+
   .state('tabsHome.gain', {
     url: '/account/gain',
     views: {
