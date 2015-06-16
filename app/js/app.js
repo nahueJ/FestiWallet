@@ -76,7 +76,7 @@ angular.module('access', ['ionic', 'access.controllers', 'access.services', 'ngC
   })
 
   .state('tabsHome.home', {
-    url: '/home',
+    url: '/home/:userNickname',
     views: {
       'tab-home': {
         templateUrl: 'templates/tab-home.html',
