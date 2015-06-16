@@ -32,7 +32,8 @@ angular.module('access.controllers', ['ionic','ngCordova'])
 				"userSurname": user.userSurname,
 				"userEmail": user.userEmail,
 				"userPassword": user.userPassword,
-				"userCurrency": 0.0
+				"userCurrency": 0.0,
+				"userPIN":user.userPIN
 			}).
 			success(function() {
 			    $state.go('tab.logIn');
@@ -53,6 +54,7 @@ angular.module('access.controllers', ['ionic','ngCordova'])
     $http.get('http://localhost:3000/users/'+$stateParams.userNickname).success(function(data) {
 		$scope.user=data;
 		$rootScope.user=data;
+
 	});		
 
 	$scope.logOut = function() {
